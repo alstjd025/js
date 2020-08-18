@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		id = ['alstjd025', 'min0152'];
+		var logged_in = false;
+		while(logged_in == false){
+			var id_ = prompt("ID: ");
+			if(id_ == id[0] || id_ == id[1]){
+				var ps = prompt("PS: ")
+				if(ps == '0095'){
+					logged_in = true;
+				}
+				else{
+					alert("Wrong PS")
+				}
+			}
+			else{
+				alert("Wrong Id")
+			}
+		}
+		alert('Log in comp ' + id_);
+	</script>	
+</body>
+</html>
