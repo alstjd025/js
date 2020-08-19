@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var id = ["alstjd025", "min0152"];
+		var ps = "0095";
+		function check_id(id_){
+			for(var i=0; i<2; i++){
+				if(id_ === id[i] )
+					return true;
+			}
+			return false;
+		}
+		function check_ps(ps_){
+			if(ps_ === ps){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+
+		var log_in = false;
+		while(log_in === false){
+			var id__ = prompt("ID: ");
+			if(check_id(id__)){
+				var ps__ = prompt("PS: ");
+				if(check_ps(ps__)){
+					alert("LOGGED IN WITH "+id__);
+				}
+				else{
+					alert("WRONG PASSWORD");
+				}
+			}
+			else{
+				alert("WRONG ID")
+			}
+	    }
+	</script>	
+</body>
+</html>
