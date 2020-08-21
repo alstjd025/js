@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	var id = ["alstjd025", "min0152"];
+	var ps = "0095";
+	var members = [];
+	var log_in = false;
+
+
+	function get_members(){
+		return members;
+	}
+	function insert_one_members(name){
+		members.push(name);
+		return 0;
+	}
+	function insert_members(name){
+		members.concat(name);
+		return 0;
+	}
+	function pop_members(){
+		members.pop();
+		return 0;
+	}
+	function show_members(){
+		for(var i=0; i<members.length; i++){
+			document.write(members[i]);
+			document.write('<br />');
+		}
+		document.write('End of List');
+		document.write('<br />');
+	}
+
+
+	function check_id(id_){
+		for(var i=0; i<2; i++){
+			if(id_ === id[i] )
+				return true;
+		}
+		return false;
+	}
+	function check_ps(ps_){
+		if(ps_ === ps){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	
+	while(log_in === false){
+		var id__ = prompt("ID: ");
+		if(check_id(id__)){
+			var ps__ = prompt("PS: ");
+			if(check_ps(ps__)){
+				alert("LOGGED IN WITH "+id__);
+				log_in = true;
+			}
+			else{
+				alert("WRONG PASSWORD");
+			}
+		}
+		else{
+			alert("WRONG ID");
+		}
+    }
+   	var order = 0;
+    while(order == 0){
+	    order = prompt("Select Order \n 1. Insert one member \n 2. Insert members \n 3. Pop member \n 4. Show member List end Exit");
+	    if(order == 1){
+	    	insert_one_members(prompt("Please Input one name"));
+	    	order = 0;
+	    }
+	    else if(order == 2){
+	    	insert_members(prompt("Please Input one name\n ['ex', 'ex']"));
+	    	order = 0;
+	    }
+	    else if(order == 3){
+	    	pop_members();
+	    	order = 0;
+	    }
+	    else if(order == 4){
+	    	show_members();
+	    	order = 6;
+	    }
+	    else{
+	    	alert("Input Number ERROR")
+	    	order = 0;
+	    }
+
+	}
+	</script>	
+</body>
+</html>
